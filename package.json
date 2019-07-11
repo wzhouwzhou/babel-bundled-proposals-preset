@@ -1,0 +1,43 @@
+{
+  "name": "babel-bundled-proposals-preset",
+  "version": "1.0.0",
+  "description": "Babel preset to mass-import proposals with options ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wzhouwzhou/babel-bundled-proposals-preset.git"
+  },
+  "keywords": [
+    "babel",
+    "js",
+    "presets",
+    "proposals"
+  ],
+  "author": "William Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wzhouwzhou/babel-bundled-proposals-preset/issues"
+  },
+  "homepage": "https://github.com/wzhouwzhou/babel-bundled-proposals-preset#readme",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-do-expressions": "^7.5.0",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.5.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0"
+  }
+}
