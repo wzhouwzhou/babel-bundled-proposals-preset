@@ -22,7 +22,7 @@ const PROPOSAL_PLUGINS = {
 
   transformCJSModules: '@babel/plugin-transform-modules-commonjs',
 };
-
+const PROPOSAL_NAMES = Object.keys(PROPOSAL_PLUGINS);
 const DEFAULT_OPTIONS = {
   decorators: { decoratorsBeforeExport: true },
   pipelineOperator: { proposal: 'smart' },
@@ -38,7 +38,7 @@ const getProposalOptions = options => {
   let { absolutePaths, all = false, ...proposalOptions } = options;
 
   if (all) {
-    for (const proposal of Object.keys(PROPOSAL_PLUGINS)) {
+    for (const proposal of PROPOSAL_NAMES) {
       if (!Reflect.getOwnPropertyDescriptor(proposalOptions, proposal)) proposalOptions[proposal] = true;
     }
   }
@@ -52,7 +52,7 @@ module.exports = (api, options = {}) => {
   const { absolutePaths = false } = options;
   const proposalOptions = getProposalOptions(options);
   const plugins = [];
-  for (const proposal of PROPOSAL_PLUGINS) {
+  for (const proposal of PROPOSAL_NAMES) {
     if (!Reflect.getOwnPropertyDescriptor(proposalOptions, proposal) || proposalOptions[proposal] === false) continue;
 
     const plugin = getPlugin(proposal, absolutePaths);
