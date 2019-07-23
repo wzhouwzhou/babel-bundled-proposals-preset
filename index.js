@@ -58,16 +58,12 @@ module.exports = (api, options = {}) => {
     const plugin = getPlugin(proposal, absolutePaths);
 
     if (proposalOptions[proposal] === true) {
-      if (proposal === 'classProperties' && proposalOptions.decorators) {
-        plugins.push([plugin, { loose: true }]);
-      } else if (Reflect.getOwnPropertyDescriptor(DEFAULT_OPTIONS, proposal)) {
-        plugins.push([plugin, DEFAULT_OPTIONS[proposal]]);
-      } else {
-        plugins.push(plugin);
-      }
+      if (proposal === 'classProperties' && proposalOptions.decorators) plugins.push([plugin, { loose: true }]);
+      else if (Reflect.getOwnPropertyDescriptor(DEFAULT_OPTIONS, proposal)) plugins.push([plugin, DEFAULT_OPTIONS[proposal]]);
+      else plugins.push(plugin);
     } else {
       plugins.push([plugin, proposalOptions[proposal]]);
     }
-  });
+  }
   return { plugins };
 };
